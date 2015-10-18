@@ -33,7 +33,7 @@ public class OldJourneys extends AppCompatActivity implements View.OnClickListen
         journeyList = (ListView) findViewById(R.id.journey_list);
         listAdapter = new AdapterForShortJourney(this, cursor);
         journeyList.setAdapter(listAdapter);
-
+        journeyList.setOnItemClickListener(this);
         ((Button) findViewById(R.id.buttn_next)).setEnabled(false);
         ((Button) findViewById(R.id.buttn_back)).setOnClickListener(this);
     }
