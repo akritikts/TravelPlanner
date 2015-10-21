@@ -1,5 +1,6 @@
 package in.silive.travelplanner;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,8 +26,8 @@ public class Detailed_view extends AppCompatActivity {
     }
 
     public void display_details() {
-        info = getIntent().getBundleExtra("position");
-        pos = Integer.parseInt(info.getString("position"));
+        Intent i=getIntent();
+        pos = Integer.parseInt(i.getStringExtra("position"));
         cursor.moveToPosition(pos);
         date_txtview = (TextView) findViewById(R.id.date_txtview);
         source = (TextView) findViewById(R.id.source);

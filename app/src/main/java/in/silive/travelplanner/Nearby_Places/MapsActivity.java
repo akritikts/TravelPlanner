@@ -8,11 +8,13 @@ import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -29,7 +31,7 @@ import java.util.ArrayList;
 
 import in.silive.travelplanner.R;
 
-public class MapsActivity extends FragmentActivity {
+public class MapsActivity extends AppCompatActivity {
 
     private GoogleMap mMap;
     URL murl;
@@ -41,20 +43,25 @@ public class MapsActivity extends FragmentActivity {
     String destination_city;
     String Api_key = "AIzaSyDT7HTfZS8fCk9HGqSRrtebfACIchDSOa4";
     LocationManager locationManager;
-    Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+    Location location ;
     Bundle info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+
+         mMap = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
+        mMap.setMyLocationEnabled(true);
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.getUiSettings().isCompassEnabled();
+        new map_act().execute();
+
 
     }
 
-    public class display_hotels extends AsyncTask<Void, Void, String> {
+    public class map_act extends AsyncTask<Void, Void, String> {
 
 
         @Override
