@@ -68,6 +68,7 @@
         </activity>
         <activity android:name=".Detailed_view" >
         </activity>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -77,7 +78,7 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/. 
         -->
         <meta-data
-            android:name="com.google.android.geo.API_KEY"
+            android:name="com.google.android.geo.AIzaSyA9n7e2Ke1X2_RQJw2sOMB3UONwqQh55hk"
             android:value="@string/google_maps_key" />
 
         <activity

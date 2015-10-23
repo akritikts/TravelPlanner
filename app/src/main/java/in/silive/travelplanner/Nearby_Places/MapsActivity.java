@@ -41,7 +41,7 @@ public class MapsActivity extends AppCompatActivity {
     ArrayList<String> list = new ArrayList<>();
     ArrayAdapter<String> mdisplay;
     String destination_city;
-    String Api_key = "AIzaSyDT7HTfZS8fCk9HGqSRrtebfACIchDSOa4";
+    String Api_key = "AIzaSyA9n7e2Ke1X2_RQJw2sOMB3UONwqQh55hk";
     LocationManager locationManager;
 
     Location location ;
