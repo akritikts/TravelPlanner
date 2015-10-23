@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="in.silive.travelplanner" >
+    package="in.silive.travelplanner">
 
     <uses-sdk android:minSdkVersion="11" />
 
@@ -21,22 +21,20 @@
         android:allowBackup="true"
         android:icon="@drawable/travel"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".searchTrain.SearchTrains"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".bookTicket.BookTicket"
             android:label="Travel Planner"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".Splash"
             android:label="@string/title_activity_splash"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,28 +44,20 @@
         <activity
             android:name=".Central"
             android:label="@string/title_activity_central"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity android:name=".travelInfo.TravelInfo" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".travelInfo.TravelInfo"></activity>
         <activity
             android:name=".Checklist"
             android:label="Travel Planner"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".Nearby_Places.Search_Nearby_Places"
             android:label="Travel Planner"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity android:name=".Hotels.Hotels_Search" >
-        </activity>
-        <activity android:name=".OldJourneys.OldJourneys" >
-        </activity>
-        <activity android:name=".image_test" >
-        </activity>
-        <activity android:name=".Detailed_view" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".Hotels.Hotels_Search"></activity>
+        <activity android:name=".OldJourneys.OldJourneys"></activity>
+        <activity android:name=".image_test"></activity>
+        <activity android:name=".Detailed_view"></activity>
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -83,8 +73,7 @@
 
         <activity
             android:name=".Nearby_Places.MapsActivity"
-            android:label="@string/title_activity_maps" >
-        </activity>
+            android:label="@string/title_activity_maps"></activity>
     </application>
 
 </manifest>

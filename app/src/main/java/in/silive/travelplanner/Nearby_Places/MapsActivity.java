@@ -44,7 +44,7 @@ public class MapsActivity extends AppCompatActivity {
     String Api_key = "AIzaSyA9n7e2Ke1X2_RQJw2sOMB3UONwqQh55hk";
     LocationManager locationManager;
 
-    Location location ;
+    Location location;
     Bundle info;
 
     @Override
@@ -52,7 +52,7 @@ public class MapsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-         mMap = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
+        mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
         mMap.setMyLocationEnabled(true);
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().isCompassEnabled();

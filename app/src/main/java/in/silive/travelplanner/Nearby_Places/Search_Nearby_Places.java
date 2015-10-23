@@ -32,7 +32,7 @@ import in.silive.travelplanner.R;
 
 
 public class Search_Nearby_Places extends AppCompatActivity implements View.OnClickListener {
-    String Api_key = "AIzaSyDT7HTfZS8fCk9HGqSRrtebfACIchDSOa4";
+    String Api_key = "AIzaSyC1fvg262FI2ir1HxEhA9tAFdJ6xaE64vE";
     URL url;
     HttpURLConnection connection;
     BufferedReader bufferedReader;
