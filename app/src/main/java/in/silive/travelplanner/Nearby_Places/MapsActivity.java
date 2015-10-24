@@ -38,8 +38,6 @@ public class MapsActivity extends AppCompatActivity {
     HttpURLConnection mconnection;
     BufferedReader mbufferedReader;
     StringBuilder mresponse = new StringBuilder();
-    ArrayList<String> list = new ArrayList<>();
-    ArrayAdapter<String> mdisplay;
     String destination_city;
     String Api_key = "AIzaSyA9n7e2Ke1X2_RQJw2sOMB3UONwqQh55hk";
     Bundle info;
@@ -107,7 +105,7 @@ public class MapsActivity extends AppCompatActivity {
             // super.onPostExecute(s);
 
             parsing_locs(s);
-            mdisplay.notifyDataSetChanged();
+
 
 
         }
