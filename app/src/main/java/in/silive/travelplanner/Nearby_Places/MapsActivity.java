@@ -42,9 +42,6 @@ public class MapsActivity extends AppCompatActivity {
     ArrayAdapter<String> mdisplay;
     String destination_city;
     String Api_key = "AIzaSyA9n7e2Ke1X2_RQJw2sOMB3UONwqQh55hk";
-    LocationManager locationManager;
-
-    Location location;
     Bundle info;
 
     @Override
@@ -126,8 +123,8 @@ public class MapsActivity extends AppCompatActivity {
                 JSONObject place = places.getJSONObject(i);
                 str = place.getString("name");
                 JSONObject latlng = places.getJSONObject(i);
-                lat = location.getLatitude();
-                lng = location.getLongitude();
+                lat = latlng.getDouble("lat");
+                lng = latlng.getDouble("lng");
                 mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(str));
 
             }
