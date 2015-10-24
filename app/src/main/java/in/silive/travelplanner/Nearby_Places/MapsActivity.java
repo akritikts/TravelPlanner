@@ -39,7 +39,7 @@ public class MapsActivity extends AppCompatActivity {
     BufferedReader mbufferedReader;
     StringBuilder mresponse = new StringBuilder();
     String destination_city;
-    String Api_key = "AIzaSyA9n7e2Ke1X2_RQJw2sOMB3UONwqQh55hk";
+    String Api_key = "AIzaSyC1fvg262FI2ir1HxEhA9tAFdJ6xaE64vE";
     Bundle info;
 
     @Override
