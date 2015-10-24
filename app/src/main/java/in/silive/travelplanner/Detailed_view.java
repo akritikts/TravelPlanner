@@ -5,12 +5,18 @@ import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 
-public class Detailed_view extends AppCompatActivity {
+import in.silive.travelplanner.OldJourneys.OldJourneys;
+
+public class Detailed_view extends AppCompatActivity implements View.OnClickListener{
     Cursor cursor;
     DataBaseHelper db=new DataBaseHelper(this);
-    Bundle info;
+    Button buttn_back;
+    Button buttn_next;
     Integer pos;
     TextView date_txtview;
     TextView source;
@@ -31,7 +37,22 @@ public class Detailed_view extends AppCompatActivity {
         train = (TextView) findViewById(R.id.train);
         hotel = (TextView) findViewById(R.id.hotel);
         fav = (TextView) findViewById(R.id.fav);
+        buttn_back=(Button)findViewById(R.id.buttn_back);
+        buttn_back.setOnClickListener(this);
+        buttn_next=(Button)findViewById(R.id.buttn_next);
+        buttn_next.setEnabled(false);
         display_details();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId())
+        {
+            case R.id.buttn_back:Intent i=new Intent(this, OldJourneys.class);
+                startActivity(i);
+                finish();
+                break;
+        }
     }
 
     public void display_details() {
