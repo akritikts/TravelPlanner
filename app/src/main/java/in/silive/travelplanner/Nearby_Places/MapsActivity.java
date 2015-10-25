@@ -31,7 +31,7 @@ import java.util.ArrayList;
 
 import in.silive.travelplanner.R;
 
-public class MapsActivity extends AppCompatActivity {
+public class MapsActivity extends FragmentActivity {
 
     private GoogleMap mMap;
     URL murl;
