@@ -46,7 +46,7 @@ public class MapsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-
+        setUpMapIfNeeded();
         mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
         mMap.setMyLocationEnabled(true);
         mMap.getUiSettings().setZoomControlsEnabled(true);
@@ -55,6 +55,23 @@ public class MapsActivity extends AppCompatActivity {
 
 
     }
+    private void setUpMapIfNeeded() {
+        if (mMap == null) {
+            mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+            mMap.setMyLocationEnabled(true);
+
+            if (mMap != null) {
+                setUpMap();}
+        }
+    }
+    private void setUpMap() {
+        mMap.setMyLocationEnabled(true);
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.getUiSettings().isCompassEnabled();
+        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+
+    }
+
 
     public class map_act extends AsyncTask<Void, Void, String> {
 
