@@ -32,7 +32,7 @@ import in.silive.travelplanner.R;
  * Created by H.P on 10/10/2015.
  */
 public class Hotels_Search extends AppCompatActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
-    String Api_key = "AIzaSyC1fvg262FI2ir1HxEhA9tAFdJ6xaE64vE";
+    String Api_key = "AIzaSyBqr_NfABLB_ZLkO7mmucfyzagec93Jc50";
     URL H_url;
     HttpURLConnection H_connection;
     BufferedReader H_bufferedReader;

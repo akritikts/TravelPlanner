@@ -1,21 +1,14 @@
 package in.silive.travelplanner.Nearby_Places;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.location.Location;
-import android.location.LocationManager;
 import android.os.AsyncTask;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -27,43 +20,39 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 
 import in.silive.travelplanner.R;
 
 public class MapsActivity extends FragmentActivity {
 
-    private GoogleMap mMap;
     URL murl;
     HttpURLConnection mconnection;
     BufferedReader mbufferedReader;
     StringBuilder mresponse = new StringBuilder();
     String destination_city;
-    String Api_key = "AIzaSyC1fvg262FI2ir1HxEhA9tAFdJ6xaE64vE";
+    String Api_key = "AIzaSyBqr_NfABLB_ZLkO7mmucfyzagec93Jc50";
     Bundle info;
+    private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
-        mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-        mMap.setMyLocationEnabled(true);
-        mMap.getUiSettings().setZoomControlsEnabled(true);
-        mMap.getUiSettings().isCompassEnabled();
         new map_act().execute();
-
-
     }
+
     private void setUpMapIfNeeded() {
         if (mMap == null) {
-            mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
             mMap.setMyLocationEnabled(true);
 
             if (mMap != null) {
-                setUpMap();}
+                setUpMap();
+            }
         }
     }
+
     private void setUpMap() {
         mMap.setMyLocationEnabled(true);
         mMap.getUiSettings().setZoomControlsEnabled(true);
@@ -122,7 +111,6 @@ public class MapsActivity extends FragmentActivity {
             // super.onPostExecute(s);
 
             parsing_locs(s);
-
 
 
         }
