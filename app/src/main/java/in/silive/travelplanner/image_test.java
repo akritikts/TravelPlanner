@@ -36,17 +36,12 @@ ImageView img;
             }catch (Exception e){
                 e.printStackTrace();
             }
-
             return null;
         }
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
-
         }
-
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
